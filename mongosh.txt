@@ -1,0 +1,17 @@
+1- db.createCollection("Books", {
+  validator: {
+    $jsonSchema: {
+      required: ["title"],
+      properties: {
+        title: {
+          bsonType: "string",
+          minLength: 1,
+          description: "title must be a non-empty string"
+        }
+      }
+    }
+  },
+})
+
+
+3- db.createCollection('Logs', {capped: true, size:1000})
